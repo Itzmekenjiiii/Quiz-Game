@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ GAME</title>
+    <style>
+        body{
+            font-family: Arial,sans-serif; text-align: center; margin-top: 50px;
+            background-color: cadetblue;
+        }
+
+        #quiz-container{
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            margin-top: 200px;
+            background-color: rgb(133, 234, 210);
+            
+            
+        }
+
+        button{
+            padding: 10px, 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 90px;
+            border-radius: 20%;
+            background-color: #e7ebf7;
+        }
+        button:hover{
+            background-color: #3ce9d8;
+        }
+
+        #quest{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h2>JavaScript Quiz</h2>
+        <p id="quest"></p>
+        <button onclick="checkAnswer('Paris')">Paris</button>
+        <button onclick="checkAnswer('Berlin')">Berlin</button>
+        <button onclick="checkAnswer('Madrid')">Madrid</button>
+        <button onclick="checkAnswer('Rome')">Rome</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        let quizData = {question: "What is the capital of France?", correctAnswer: "Paris"}
+        document.getElementById("quest").textContent = quizData.question;
+
+        function checkAnswer(selectedAnswer){
+            if (selectedAnswer === quizData.correctAnswer){
+                document.getElementById("result").innerHTML = "Correct!"
+            } else {
+                document.getElementById("result").innerHTML = "Incorrect!"
+            }
+        }
+
+    </script>
+</body>
+</html>
